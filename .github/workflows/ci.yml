@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: probe
+        run: |
+          echo "MARKER=BASE_MAIN_CODE"
+          echo "head_ref=${{ github.ref }}"
+          echo "sha=${{ github.sha }}"
